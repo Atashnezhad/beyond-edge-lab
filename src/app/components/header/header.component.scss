@@ -1,9 +1,30 @@
 header {
+    width: 100%;
+  }
+  
+  .header-top {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .brand {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  nav {
     display: flex;
-    padding-inline: 16PX;
-    padding-block: 8PX;
-    background-color: #333;
-    color: white;
-    font-size: 44PX;
-
-}
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .nav-left a, .nav-right a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9em;
+    padding: 10px;
+    // make it bold and red color
+    font-weight: bold;
+    color: red;
+  }
+  
