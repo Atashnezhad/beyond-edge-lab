@@ -1,0 +1,50 @@
+.about-container {
+    position: relative;
+    padding: 20px;
+}
+
+.animate-text {
+    animation: fadeIn 1s ease-in-out, slideInWrap 2s ease-in-out;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.group-1 {
+    animation-delay: 0s;
+}
+
+.group-2 {
+    animation-delay: 0.5s;
+}
+
+.group-3 {
+    animation-delay: 1s;
+}
+
+.group-4 {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInWrap {
+    from {
+        transform: translateX(-100%);
+        white-space: nowrap;
+    }
+    50% {
+        transform: translateX(0);
+        white-space: nowrap;
+    }
+    to {
+        transform: translateX(0);
+        white-space: normal;
+    }
+}
