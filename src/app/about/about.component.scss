@@ -5,24 +5,39 @@
 
 .animate-text {
     animation: fadeIn 1s ease-in-out, slideInWrap 2s ease-in-out;
+    opacity: 0;
     overflow: hidden;
     display: inline-block;
 }
 
 .group-1 {
     animation-delay: 0s;
+    animation-fill-mode: forwards;
 }
 
 .group-2 {
-    animation-delay: 0.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 .group-3 {
-    animation-delay: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
 .group-4 {
-    animation-delay: 1.5s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+.group-5 {
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.group-6 {
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
