@@ -50,23 +50,6 @@ body {
     color: $primary-color;
   }
 
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-
-
-    .icon {
-      margin: 0 10px;
-      font-size: 20px;
-      color: $primary-color;
-
-      &:hover {
-        color: #000;
-      }
-    }
-  }
-
   .test1 {
     // display: flex;
     // justify-content: center;
@@ -90,7 +73,7 @@ body {
   input {
     padding: 10px;
     margin-bottom: 15px;
-    width: 100%;
+    width: 90%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
