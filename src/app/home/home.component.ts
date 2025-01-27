@@ -3,7 +3,7 @@ import { LoginComponent } from "../components/login/login.component";
 
 @Component({
   selector: 'app-home',
-  imports: [LoginComponent, LoginComponent],
+  imports: [LoginComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

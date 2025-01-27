@@ -1,0 +1,26 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // 3 images per row
+      gap: 1rem; // Space between images
+  
+      img {
+        width: 100%; // Full width of the grid cell
+        height: 150px; // Fixed height for uniform size
+        object-fit: cover; // Ensure the image fits within the bounds without distortion
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  

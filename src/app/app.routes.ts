@@ -11,6 +11,12 @@ export const routes: Routes = [
         path: 'about',
         pathMatch: 'full',
         loadComponent: () => {return import('./about/about.component').then(m => m.AboutComponent)}
+    },
+    // include page1
+    {
+        path: 'page1',
+        pathMatch: 'full',
+        loadComponent: () => {return import('./page1/page1.component').then(m => m.Page1Component)}
     }
 
 ];

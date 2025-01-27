@@ -24,5 +24,9 @@ header {
     // make it bold and red color
     font-weight: bold;
     color: red;
+    // when hover make it blue color
+    &:hover {
+      color: blue;
+    }
   }
   
