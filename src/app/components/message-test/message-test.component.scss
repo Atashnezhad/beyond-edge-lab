@@ -1,0 +1,32 @@
+.animated-text {
+    font-size: 1.2rem;
+    color: #333;
+    width: 90%;
+    max-width: 600px;
+    border-right: 2px solid #333; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(50, end), blink 0.5s step-end infinite;
+    margin-top: 2rem; /* Space between the images and text */
+  }
+  
+  /* Typing animation */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Blinking cursor animation */
+  @keyframes blink {
+    from {
+      border-right-color: transparent;
+    }
+    to {
+      border-right-color: #333;
+    }
+  }
+  
