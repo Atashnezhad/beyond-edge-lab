@@ -1,13 +1,14 @@
 .animated-text {
     font-size: 1.2rem;
     color: #333;
-    width: 90%;
+    width: 100%; /* Ensure it spans the available width */
     max-width: 600px;
     border-right: 2px solid #333; /* Cursor effect */
-    white-space: nowrap;
+    white-space: normal; /* Allow text to wrap onto the next line */
     overflow: hidden;
-    animation: typing 5s steps(50, end), blink 0.5s step-end infinite;
-    margin-top: 2rem; /* Space between the images and text */
+    animation: typing 5s steps(60, end), blink 0.5s step-end infinite;
+    margin-top: 5rem; /* Space between the images and text */
+    display: inline-block; /* Ensure the text doesn't break across lines */
   }
   
   /* Typing animation */

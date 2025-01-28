@@ -1,32 +1,31 @@
 header {
-    width: 100%;
+  width: 100%;
+}
+
+.header-top {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.brand {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+}
+
+.nav-left a, .nav-right a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9em;
+  padding: 10px;
+  font-weight: bold;
+  color: red;
+
+  &:hover {
+    color: blue;
+    font-size: 1.1em; /* Increase font size on hover */
   }
-  
-  .header-top {
-    background-color: #f0f0f0;
-    padding: 10px;
-  }
-  
-  .brand {
-    font-size: 2.2em;
-    font-weight: bold;
-  }
-  
-  nav {
-    display: flex;
-  }
-  
-  .nav-left a, .nav-right a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.9em;
-    padding: 10px;
-    // make it bold and red color
-    font-weight: bold;
-    color: red;
-    // when hover make it blue color
-    &:hover {
-      color: blue;
-    }
-  }
-  
+}
