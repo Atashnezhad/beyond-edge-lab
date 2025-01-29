@@ -1,62 +1,61 @@
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    gap: 3rem; /* Space between images */
-  }
-  
-  .image-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-wrapper img {
-    width: 100%; /* Full width of the grid cell */
-    height: 150px; /* Fixed height for uniform size */
-    object-fit: cover; /* Ensure the image fits within the bounds without distortion */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .image-wrapper img:hover {
-    transform: scale(2);
-  }
-  
-  .image-wrapper .message {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); /* Center the message horizontally */
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 1rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 0 0 8px 8px;
-    width: 100%; /* Ensures message takes up full width of the image wrapper */
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
-  }
-  
-  .image-wrapper:hover .message {
-    opacity: 1;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
 
-  .message-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 3 images per row */
+  gap: 1rem; /* Space between images */
+}
 
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper img {
+  width: 100%; /* Full width of the grid cell */
+  height: 150px; /* Fixed height for uniform size */
+  object-fit: cover; /* Ensure the image fits within the bounds without distortion */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.2);
+}
+
+.image-wrapper .message {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the message horizontally */
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 8px 8px;
+  width: 100%; /* Ensures message takes up full width of the image wrapper */
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+.image-wrapper:hover .message {
+  opacity: 1;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
