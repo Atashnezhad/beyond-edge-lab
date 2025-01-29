@@ -16,3 +16,6 @@
 
 <!-- Show recorded video -->
 <video *ngIf="videoSrc" [src]="videoSrc" controls></video>
+
+<button (click)="startCamera(true)">Front Camera</button>
+<button (click)="startCamera(false)">Rear Camera</button>

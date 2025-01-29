@@ -18,16 +18,21 @@ export class MediaCaptureComponent {
   recordedChunks: Blob[] = [];
   stream: MediaStream | null = null;
 
-  // Start camera
-  async startCamera() {
+  async startCamera(useFrontCamera: boolean = true) {
     try {
-      this.stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+      const constraints = {
+        video: { facingMode: useFrontCamera ? "user" : "environment" },
+        audio: true
+      };
+      this.stream = await navigator.mediaDevices.getUserMedia(constraints);
       this.videoElement.nativeElement.srcObject = this.stream;
       this.videoElement.nativeElement.play();
     } catch (error) {
-      console.error('Error accessing camera:', error);
+      console.error('Error switching camera:', error);
     }
   }
+  
+  
 
   // Capture image from video stream
   captureImage() {
