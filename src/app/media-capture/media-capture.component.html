@@ -1,0 +1,26 @@
+<div class="media-capture-container">
+    <h2>Capture Image or Video</h2>
+    
+    <!-- Capture Image -->
+    <button (click)="captureImage()">Take a Photo</button>
+    <input type="file" accept="image/*" capture="environment" #imageInput (change)="onFileSelected($event, 'image')" hidden />
+    
+    <!-- Capture Video -->
+    <button (click)="captureVideo()">Record Video</button>
+    <input type="file" accept="video/*" capture="environment" #videoInput (change)="onFileSelected($event, 'video')" hidden />
+  
+    <!-- Display Captured Media -->
+    <div *ngIf="imageSrc">
+      <h3>Captured Image</h3>
+      <img [src]="imageSrc" alt="Captured Image" class="preview">
+    </div>
+  
+    <div *ngIf="videoSrc">
+      <h3>Captured Video</h3>
+      <video controls class="preview">
+        <source [src]="videoSrc" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  
