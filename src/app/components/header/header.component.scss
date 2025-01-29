@@ -3,13 +3,25 @@ header {
 }
 
 .header-top {
-  background-color: #f0f0f0;
+  background-color: #000000;
   padding: 10px;
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-gif {
+  width: 100px;  // Adjust width as needed
+  height: auto;
+  margin-right: 10px; // Add some space between the GIF and text
+}
+
+.brand-text {
   font-size: 2.2em;
   font-weight: bold;
+  color: white;
 }
 
 nav {
@@ -18,11 +30,10 @@ nav {
 
 .nav-left a, .nav-right a {
   text-decoration: none;
-  color: #333;
+  color: red;
   font-size: 0.9em;
   padding: 10px;
   font-weight: bold;
-  color: red;
 
   &:hover {
     color: blue;
