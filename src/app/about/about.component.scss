@@ -1,65 +1,67 @@
-.about-container {
-    position: relative;
-    padding: 20px;
-}
-
+/* Initially hide all groups */
 .animate-text {
-    animation: fadeIn 1s ease-in-out, slideInWrap 2s ease-in-out;
-    opacity: 0;
-    overflow: hidden;
     display: inline-block;
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
 }
 
-.group-1 {
-    animation-delay: 0s;
-    animation-fill-mode: forwards;
+/* Define the keyframes for the typing animation */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
-.group-2 {
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-}
-
-.group-3 {
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-}
-
-.group-4 {
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
-}
-
-.group-5 {
-    animation-delay: 4s;
-    animation-fill-mode: forwards;
-}
-
-.group-6 {
-    animation-delay: 5s;
-    animation-fill-mode: forwards;
-}
-
+/* Define the keyframes for fading in the text */
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+    100% {
         opacity: 1;
     }
 }
 
-@keyframes slideInWrap {
-    from {
-        transform: translateX(-100%);
-        white-space: nowrap;
-    }
-    50% {
-        transform: translateX(0);
-        white-space: nowrap;
-    }
-    to {
-        transform: translateX(0);
-        white-space: normal;
-    }
+/* Group-specific animations */
+.group-1 {
+    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation-delay: 0s;
+}
+
+.group-2 {
+    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation-delay: 2s;
+}
+
+.group-3 {
+    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation-delay: 4s;
+}
+
+.group-4 {
+    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation-delay: 6s;
+}
+
+.group-5 {
+    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation-delay: 8s;
+}
+
+.group-6 {
+    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation-delay: 10s;
+}
+
+/* Optional: If you want to keep the text aligned without jumping */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
