@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MediaCaptureComponent } from "../media-capture/media-capture.component";
-import { VideoFeedComponent } from '../components/video-feed/video-feed.component';
+
 
 @Component({
   selector: 'app-page1',
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.scss'],
   standalone: true,
-  imports: [CommonModule, MediaCaptureComponent, VideoFeedComponent]
+  imports: [CommonModule]
 })
 export class Page1Component {
 
