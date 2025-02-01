@@ -5,6 +5,7 @@
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    padding-right: 5px; /* Add some space for the cursor */
 }
 
 /* Define the keyframes for the typing animation */
@@ -27,35 +28,59 @@
     }
 }
 
+/* Keyframe for the cursor blinking */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Group-specific animations */
 .group-1 {
-    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation: fadeIn 1s ease-out forwards, typing 1.5s steps(30) 1s forwards;
     animation-delay: 0s;
 }
 
 .group-2 {
-    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation: fadeIn 1s ease-out forwards, typing 1.5s steps(30) 1s forwards;
     animation-delay: 2s;
 }
 
 .group-3 {
-    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation: fadeIn 1s ease-out forwards, typing 1.5s steps(30) 1s forwards;
     animation-delay: 4s;
 }
 
 .group-4 {
-    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation: fadeIn 1s ease-out forwards, typing 1.5s steps(30) 1s forwards;
     animation-delay: 6s;
 }
 
 .group-5 {
-    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation: fadeIn 1s ease-out forwards, typing 1.5s steps(30) 1s forwards;
     animation-delay: 8s;
 }
 
 .group-6 {
-    animation: fadeIn 1s ease-out forwards, typing 2s steps(30) 1s forwards;
+    animation: fadeIn 1s ease-out forwards, typing 1.5s steps(30) 1s forwards;
     animation-delay: 10s;
+}
+
+/* Add styling for the blinking cursor */
+.animate-text::after {
+    content: '';
+    display: inline-block;
+    width: 8px; /* Width of the rectangular cursor */
+    height: 20px; /* Height of the rectangular cursor */
+    background-color: black; /* Black color for the cursor */
+    margin-left: 2px; /* Space between text and cursor */
+    animation: blink 1s step-end infinite; /* Blink animation */
 }
 
 /* Optional: If you want to keep the text aligned without jumping */
