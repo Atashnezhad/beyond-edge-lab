@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
   styles: [
     `
       main {
-        padding: 16px;
+        // padding: 16px;
       }
     `,
   ],
