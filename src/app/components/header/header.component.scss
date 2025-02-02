@@ -21,7 +21,10 @@ header {
 .brand-text {
   font-size: 2.2em;
   font-weight: bold;
-  color: white;
+  background: linear-gradient(45deg, #9a2fff, #ffffff); /* Define the gradient colors */
+  -webkit-background-clip: text; /* Make sure the background is clipped to the text */
+  background-clip: text; /* For cross-browser compatibility */
+  color: transparent; /* Ensure the text itself is transparent so the gradient shows */
 }
 
 nav {

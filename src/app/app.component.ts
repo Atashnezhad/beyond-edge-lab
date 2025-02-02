@@ -12,13 +12,13 @@ import { FormsModule } from '@angular/forms';
       <router-outlet></router-outlet>
     </main>    
   `,
-  styles: [
-    `
-      main {
-        // padding: 16px;
-      }
-    `,
-  ],
+  // styles: [
+  //   `
+  //     main {
+  //       padding: 16px;
+  //     }
+  //   `,
+  // ],
 })
 export class AppComponent {
   title = 'beyond-edge-lab';
