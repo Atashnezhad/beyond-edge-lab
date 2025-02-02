@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ImageUploadComponent } from '../components/image-upload/image-upload.component';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, ImageUploadComponent]
 })
 export class Page1Component {
 

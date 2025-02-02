@@ -1,16 +1,25 @@
 .image-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem;
   width: 100%;
+  min-height: 100vh;
   flex-wrap: wrap;
   box-sizing: border-box;
-  overflow-x: hidden;
-  //background-color: black;
+  overflow: hidden;
   background-color: black;
+  margin: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+.image-container::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 
 
