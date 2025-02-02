@@ -1,16 +1,22 @@
 .image-container {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   width: 100%;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  //background-color: black;
+  background-color: black;
 }
+
 
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 3 images per row */
+  grid-template-columns: repeat(4, 1fr); /* 3 images per row */
   gap: 1rem; /* Space between images */
 }
 
