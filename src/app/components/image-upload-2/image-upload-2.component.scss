@@ -1,0 +1,33 @@
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  
+    input {
+      margin-bottom: 10px;
+    }
+  
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  
+    img {
+      margin-top: 20px;
+      width: 100; /* Set the width of the image */
+      height: 100; /* Set the height of the image */
+      object-fit: cover; /* Maintain aspect ratio and cover the area */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  

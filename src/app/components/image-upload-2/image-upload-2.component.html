@@ -1,0 +1,13 @@
+<div class="upload-container">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <button (click)="uploadImage()">Upload & Process</button>
+    <div *ngIf="processedImageUrl">
+      <h3>Processed Image:</h3>
+      <img 
+        [src]="processedImageUrl" 
+        alt="Processed Image" 
+        [style.width.px]="imageWidth" 
+        [style.height.px]="imageHeight" />
+    </div>
+  </div>
+  
