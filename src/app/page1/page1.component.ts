@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ImageUploadComponent } from '../components/image-upload/image-upload.component';
 import { ImageUpload2Component } from '../components/image-upload-2/image-upload-2.component';
+import { VisualizerComponent } from "../components/visualizer/visualizer.component";
 
 
 @Component({
@@ -9,7 +10,7 @@ import { ImageUpload2Component } from '../components/image-upload-2/image-upload
   templateUrl: './page1.component.html',
   styleUrls: ['./page1.component.scss'],
   standalone: true,
-  imports: [CommonModule, ImageUpload2Component]
+  imports: [CommonModule, ImageUpload2Component, VisualizerComponent, VisualizerComponent]
 })
 export class Page1Component {
 
