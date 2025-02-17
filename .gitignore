@@ -41,3 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 dist.zip
+src/assets/3d_data.json
+src/assets/3d_data_downsampled.json
