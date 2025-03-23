@@ -1,10 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
-body, html {
+
+// Import variables and mixins
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/theme';
+
+// Reset and base styles
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
 }
 
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+// Global styles
 * {
-    outline: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  @include transition(color);
+
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}
+
+// Utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+
+// Responsive helpers
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-flex { display: flex !important; }
+
+@include respond-to(sm) {
+  .d-sm-none { display: none !important; }
+  .d-sm-block { display: block !important; }
+  .d-sm-flex { display: flex !important; }
+}
+
+@include respond-to(md) {
+  .d-md-none { display: none !important; }
+  .d-md-block { display: block !important; }
+  .d-md-flex { display: flex !important; }
+}
+
+// Animation classes
+.fade-in {
+  opacity: 0;
+  @include transition(opacity);
+  
+  &.show {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  transform: translateX(-100%);
+  @include transition(transform);
+  
+  &.show {
+    transform: translateX(0);
+  }
 }

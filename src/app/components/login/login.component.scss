@@ -17,31 +17,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   width: 100%;
-  // height: 100%;
-  position: absolute;
+  padding: 20px;
+  background-color: #e8f4f8;
 }
 
 .container {
   display: flex;
-  flex-direction: column;  // Change to column for vertical alignment
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease-in-out;
-  width: 600px;
-  height: auto;  // Adjust height to be flexible
+  width: 100%;
+  max-width: 600px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .form-container {
+  width: 100%;
   padding: 30px;
-  width: 80%;  // Adjust width for better layout when stacked vertically
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 
   h1 {
     text-align: center;
@@ -50,17 +51,9 @@ body {
     color: $primary-color;
   }
 
-  .test1 {
-    // display: flex;
-    // justify-content: center;
-    // margin-bottom: 20px;
-    padding: 20px;
-  }
-
-  .test2 {
-    // display: flex;
-    // justify-content: center;
-    // margin-bottom: 20px;
+  .test1, .test2 {
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
   }
 
@@ -68,14 +61,13 @@ body {
     text-align: center;
     color: #777;
     margin-bottom: 20px;
-    // make space below
     display: block;
   }
 
   input {
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     margin-bottom: 15px;
-    width: 90%;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -87,7 +79,8 @@ body {
   }
 
   button {
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     background-color: $primary-color;
     color: white;
     border: none;
@@ -115,18 +108,20 @@ body {
 
 .sign-up,
 .sign-in {
-  display: block;
-  width: 100%;  // Ensure each form takes up full width when stacked
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .container {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    margin: 10px;
   }
 
   .form-container {
-    width: 100%;
-    padding: 15px;
+    padding: 20px;
+  }
+
+  .test1, .test2 {
+    padding: 10px;
   }
 }

@@ -1,0 +1,82 @@
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-sm - 1}) { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media (min-width: #{$breakpoint-sm}) { @content; }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: #{$breakpoint-md}) { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-lg}) { @content; }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: #{$breakpoint-xl}) { @content; }
+  }
+}
+
+// Typography
+@mixin font-size($size) {
+  font-size: $size;
+  line-height: $size * 1.5;
+}
+
+// Truncate text
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Transitions
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Box shadow
+@mixin box-shadow($level: 1) {
+  @if $level == 1 {
+    box-shadow: $box-shadow-sm;
+  }
+  @else if $level == 2 {
+    box-shadow: $box-shadow;
+  }
+  @else if $level == 3 {
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+// Button styles
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%)) {
+  color: white;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover {
+    color: white;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+}
+
+// Grid
+@mixin grid($columns: 12, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+} 

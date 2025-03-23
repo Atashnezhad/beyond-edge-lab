@@ -1,24 +1,35 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './layout/header/header.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, CommonModule],
   template: `
-    <app-header></app-header>
-    <main>
-      <router-outlet></router-outlet>
-    </main>    
+    <div class="app-container">
+      <app-header></app-header>
+      <main class="main-content">
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </main>
+    </div>
   `,
-  // styles: [
-  //   `
-  //     main {
-  //       padding: 16px;
-  //     }
-  //   `,
-  // ],
+  styles: [`
+    .app-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: var(--spacing-md) 0;
+      background-color: var(--light-color);
+    }
+  `]
 })
 export class AppComponent {
   title = 'beyond-edge-lab';

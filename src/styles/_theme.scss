@@ -1,0 +1,49 @@
+:root {
+  // Colors
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --danger-color: #{$danger-color};
+  --warning-color: #{$warning-color};
+  --info-color: #{$info-color};
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
+
+  // Typography
+  --font-family-base: #{$font-family-base};
+  --font-size-base: #{$font-size-base};
+  --line-height-base: #{$line-height-base};
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-bold: #{$font-weight-bold};
+
+  // Spacing
+  --spacing-unit: #{$spacing-unit};
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+
+  // Border
+  --border-radius: #{$border-radius};
+  --border-radius-lg: #{$border-radius-lg};
+  --border-radius-sm: #{$border-radius-sm};
+  --border-width: #{$border-width};
+  --border-color: #{$border-color};
+
+  // Shadows
+  --box-shadow-sm: #{$box-shadow-sm};
+  --box-shadow: #{$box-shadow};
+  --box-shadow-lg: #{$box-shadow-lg};
+}
+
+// Dark theme
+[data-theme="dark"] {
+  --primary-color: #{lighten($primary-color, 10%)};
+  --light-color: #{$dark-color};
+  --dark-color: #{$light-color};
+  --border-color: #{lighten($border-color, 40%)};
+  
+  background-color: #{darken($dark-color, 5%)};
+  color: var(--dark-color);
+} 
