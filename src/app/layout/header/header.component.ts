@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
           </div>
           <nav class="nav-menu">
             <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-            <a routerLink="/about" routerLinkActive="active">About</a>
+            <a *ngIf="!isLoggedIn" routerLink="/about" routerLinkActive="active">About</a>
             <a routerLink="/page1" routerLinkActive="active">Services</a>
           </nav>
         </div>
@@ -63,4 +64,12 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class HeaderComponent {} 
+export class HeaderComponent {
+  isLoggedIn: boolean = false;
+
+  constructor(private authService: AuthService) {
+    this.authService.currentUser$.subscribe(user => {
+      this.isLoggedIn = !!user;
+    });
+  }
+} 
