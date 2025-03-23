@@ -1,77 +1,51 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';  // Add this import
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService, LoginCredentials } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
-  imports: [CommonModule, FormsModule]
+  styleUrls: ['./login.component.scss'],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, RouterModule]
 })
 export class LoginComponent {
+  loginForm: FormGroup;
+  error: string = '';
+  loading: boolean = false;
 
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
 
-  isSignDivVisiable: boolean  = true;
-
-  signUpObj: SignUpModel  = new SignUpModel();
-  loginObj: LoginModel  = new LoginModel();
-
-  constructor(private router: Router){}
-
-
-  onRegister() {
-    // debugger;
-    const localUser = localStorage.getItem('angular17users');
-    if(localUser != null) {
-      const users =  JSON.parse(localUser);
-      users.push(this.signUpObj);
-      localStorage.setItem('angular17users', JSON.stringify(users))
-    } else {
-      const users = [];
-      users.push(this.signUpObj);
-      localStorage.setItem('angular17users', JSON.stringify(users))
+  onSubmit(): void {
+    if (this.loginForm.valid) {
+      this.loading = true;
+      this.error = '';
+      
+      const credentials: LoginCredentials = this.loginForm.value;
+      
+      this.authService.login(credentials).subscribe({
+        next: (response) => {
+          this.loading = false;
+          if (response.access_token) {
+            this.router.navigate(['/about']);
+          }
+        },
+        error: (err) => {
+          this.error = err.error.detail || 'An error occurred during login';
+          this.loading = false;
+        }
+      });
     }
-    alert('Registration Success')
-  }
-
-  onLogin() {
-    // debugger;
-    const localUsers =  localStorage.getItem('angular17users');
-    if(localUsers != null) {
-      const users =  JSON.parse(localUsers);
-
-      const isUserPresent =  users.find( (user:SignUpModel)=> user.email == this.loginObj.email && user.password == this.loginObj.password);
-      if(isUserPresent != undefined) {
-        alert("User Found...");
-        localStorage.setItem('loggedUser', JSON.stringify(isUserPresent));
-        this.router.navigateByUrl('/dashboard');
-      } else {
-        alert("No User Found")
-      }
-    }
-  }
-
-}
-
-export class SignUpModel  {
-  name: string;
-  email: string;
-  password: string;
-
-  constructor() {
-    this.email = "";
-    this.name = "";
-    this.password= ""
-  }
-}
-
-export class LoginModel  { 
-  email: string;
-  password: string;
-
-  constructor() {
-    this.email = ""; 
-    this.password= ""
   }
 }
