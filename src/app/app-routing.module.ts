@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component'; // Import ProfileComponent
 
-export const routes: Routes = [
+export const routes: Routes = [ // Export routes
   { path: '', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent }, // Changed from 'about' to 'profile'
-  // ...existing code...
+  { path: 'profile', component: ProfileComponent }, // Add profile route
+  // Add a wildcard route to handle undefined routes
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

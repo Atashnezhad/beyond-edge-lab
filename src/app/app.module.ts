@@ -7,11 +7,11 @@ import { HomeComponent } from './home/home.component'; // Import HomeComponent
 
 @NgModule({
   declarations: [
-    ProfileComponent, // Declare ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ProfileComponent, // Import ProfileComponent
     AppComponent, // Import AppComponent
     HomeComponent, // Import HomeComponent
   ],
