@@ -11,13 +11,16 @@ import { CommonModule } from '@angular/common';
     <div class="app-container">
       <app-header></app-header>
       <main class="main-content">
-        <div class="container">
-          <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
       </main>
     </div>
   `,
   styles: [`
+    :host {
+      display: block;
+      min-height: 100vh;
+    }
+
     .app-container {
       min-height: 100vh;
       display: flex;
@@ -26,8 +29,7 @@ import { CommonModule } from '@angular/common';
 
     .main-content {
       flex: 1;
-      padding: var(--spacing-md) 0;
-      background-color: var(--light-color);
+      background-color: #f3f4f6;
     }
   `]
 })
