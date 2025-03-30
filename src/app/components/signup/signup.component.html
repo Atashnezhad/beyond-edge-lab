@@ -1,38 +1,38 @@
-<div class="signup-container">
-  <div class="signup-box">
-    <h2>Sign Up</h2>
+<div class="login-container">
+  <div class="login-box">
+    <h2>Create Account</h2>
+    
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="full_name">Full Name</label>
         <input
           type="text"
           id="full_name"
-          formControlName="full_name"
           class="form-control"
           [class.is-invalid]="signupForm.get('full_name')?.invalid && signupForm.get('full_name')?.touched"
-        />
-        <div class="invalid-feedback" *ngIf="signupForm.get('full_name')?.errors?.['required']">
+          formControlName="full_name"
+          placeholder="Enter your full name"
+        >
+        <div class="invalid-feedback" *ngIf="signupForm.get('full_name')?.errors?.['required'] && signupForm.get('full_name')?.touched">
           Full name is required
-        </div>
-        <div class="invalid-feedback" *ngIf="signupForm.get('full_name')?.errors?.['minlength']">
-          Full name must be at least 2 characters
         </div>
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">Email Address</label>
         <input
           type="email"
           id="email"
-          formControlName="email"
           class="form-control"
           [class.is-invalid]="signupForm.get('email')?.invalid && signupForm.get('email')?.touched"
-        />
-        <div class="invalid-feedback" *ngIf="signupForm.get('email')?.errors?.['required']">
+          formControlName="email"
+          placeholder="Enter your email"
+        >
+        <div class="invalid-feedback" *ngIf="signupForm.get('email')?.errors?.['required'] && signupForm.get('email')?.touched">
           Email is required
         </div>
-        <div class="invalid-feedback" *ngIf="signupForm.get('email')?.errors?.['email']">
-          Please enter a valid email
+        <div class="invalid-feedback" *ngIf="signupForm.get('email')?.errors?.['email'] && signupForm.get('email')?.touched">
+          Please enter a valid email address
         </div>
       </div>
 
@@ -41,14 +41,15 @@
         <input
           type="password"
           id="password"
-          formControlName="password"
           class="form-control"
           [class.is-invalid]="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"
-        />
-        <div class="invalid-feedback" *ngIf="signupForm.get('password')?.errors?.['required']">
+          formControlName="password"
+          placeholder="Enter your password"
+        >
+        <div class="invalid-feedback" *ngIf="signupForm.get('password')?.errors?.['required'] && signupForm.get('password')?.touched">
           Password is required
         </div>
-        <div class="invalid-feedback" *ngIf="signupForm.get('password')?.errors?.['minlength']">
+        <div class="invalid-feedback" *ngIf="signupForm.get('password')?.errors?.['minlength'] && signupForm.get('password')?.touched">
           Password must be at least 6 characters
         </div>
       </div>
@@ -58,12 +59,13 @@
       </div>
 
       <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid || loading">
-        {{ loading ? 'Signing up...' : 'Sign Up' }}
+        <span class="loading-spinner" *ngIf="loading"></span>
+        {{ loading ? 'Creating Account...' : 'Sign Up' }}
       </button>
     </form>
 
-    <div class="login-link">
-      Already have an account? <a routerLink="/login">Login</a>
+    <div class="signup-link">
+      Already have an account? <a routerLink="/login">Log in</a>
     </div>
   </div>
 </div> 

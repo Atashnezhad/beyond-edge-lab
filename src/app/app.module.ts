@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 import { AppRoutingModule } from './app-routing.module';
-import { ProfileComponent } from './profile/profile.component'; // Import ProfileComponent
-import { AppComponent } from './app.component'; // Import AppComponent
-import { HomeComponent } from './home/home.component'; // Import HomeComponent
+import { AppComponent } from './app.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
-  declarations: [
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProfileComponent, // Import ProfileComponent
-    AppComponent, // Import AppComponent
-    HomeComponent, // Import HomeComponent
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+    AppComponent
   ],
-  providers: []
+  providers: [
+  ],
+  bootstrap: []
 })
 export class AppModule { }
