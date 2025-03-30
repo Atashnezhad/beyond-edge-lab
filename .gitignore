@@ -43,3 +43,9 @@ Thumbs.db
 dist.zip
 src/assets/3d_data.json
 src/assets/3d_data_downsampled.json
+
+# Environment files
+.env
+.env.local
+.env.*.local
+beyond-edge-auth-service/.env
