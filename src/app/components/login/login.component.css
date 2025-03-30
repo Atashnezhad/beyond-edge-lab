@@ -39,10 +39,14 @@
 .dynamic-title::after {
   content: '|';
   position: absolute;
-  right: -8px;
+  right: -18px;
+  top: 20px;
   color: #ef4444;
-  animation: blink 0.7s infinite;
+  animation: blink 0.4s infinite;
   display: block;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 0.1;
 }
 
 .dynamic-title.typing::after {
