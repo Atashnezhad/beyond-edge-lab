@@ -32,16 +32,16 @@
         </div>
       </div>
 
-      <div class="error-message" *ngIf="errorMessage">
-        {{ errorMessage }}
+      <div class="error-message" *ngIf="error">
+        {{ error }}
       </div>
 
       <button 
         type="submit" 
         class="btn btn-primary" 
-        [disabled]="loginForm.invalid || isLoading">
-        <span class="loading-spinner" *ngIf="isLoading"></span>
-        {{ isLoading ? 'Logging in...' : 'Log In' }}
+        [disabled]="loginForm.invalid || loading">
+        <span class="loading-spinner" *ngIf="loading"></span>
+        {{ loading ? 'Logging in...' : 'Log In' }}
       </button>
     </form>
 
