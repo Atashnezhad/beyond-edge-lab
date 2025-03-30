@@ -19,6 +19,41 @@
   padding: 2rem;
 }
 
+/* Title Container */
+.title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dynamic-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.dynamic-title::after {
+  content: '|';
+  position: absolute;
+  right: -8px;
+  color: #ef4444;
+  animation: blink 0.7s infinite;
+  display: block;
+}
+
+.dynamic-title.typing::after {
+  display: block;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* Login Box */
 .login-box {
   width: 100%;
@@ -95,6 +130,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .btn-primary {
@@ -102,7 +139,7 @@
   color: white;
 }
 
-.btn-primary:hover:not(:disabled) {
+.btn-primary:not(:disabled):hover {
   background-color: var(--primary-hover);
 }
 
@@ -123,6 +160,8 @@
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 
 .signup-link a:hover {
@@ -157,5 +196,9 @@
 
   .login-box h2 {
     font-size: 1.25rem;
+  }
+
+  .dynamic-title {
+    font-size: 1.5rem;
   }
 } 

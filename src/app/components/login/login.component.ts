@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
@@ -11,10 +11,13 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
-  loading = false;
-  error: string | null = null;
+  errorMessage: string = '';
+  isLoading: boolean = false;
+  titleText: string = '';
+  fullTitle: string = 'Beyond Edge Lab';
+  isTyping: boolean = true;
 
   constructor(
     private fb: FormBuilder,
@@ -37,6 +40,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  ngAfterViewInit(): void {
+    this.typeTitle();
+  }
+
   get username() {
     return this.loginForm.get('username');
   }
@@ -45,18 +52,31 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
+  typeTitle() {
+    let currentIndex = 0;
+    const typeInterval = setInterval(() => {
+      if (currentIndex < this.fullTitle.length) {
+        this.titleText += this.fullTitle[currentIndex];
+        currentIndex++;
+      } else {
+        clearInterval(typeInterval);
+        this.isTyping = false;
+      }
+    }, 50);
+  }
+
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.loading = true;
-      this.error = null;
+      this.isLoading = true;
+      this.errorMessage = '';
 
       this.authService.login(this.loginForm.value).subscribe({
         next: () => {
           this.router.navigate(['/profile']);
         },
         error: (error) => {
-          this.error = error.error.message || 'Login failed';
-          this.loading = false;
+          this.errorMessage = error.error.message || 'Login failed';
+          this.isLoading = false;
         }
       });
     } else {

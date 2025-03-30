@@ -1,5 +1,8 @@
 <div class="login-container">
   <div class="login-box">
+    <div class="title-container">
+      <h1 class="dynamic-title" [class.typing]="isTyping">{{ titleText }}</h1>
+    </div>
     <h2>Welcome Back</h2>
     
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -32,16 +35,16 @@
         </div>
       </div>
 
-      <div class="error-message" *ngIf="error">
-        {{ error }}
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
       </div>
 
       <button 
         type="submit" 
         class="btn btn-primary" 
-        [disabled]="loginForm.invalid || loading">
-        <span class="loading-spinner" *ngIf="loading"></span>
-        {{ loading ? 'Logging in...' : 'Log In' }}
+        [disabled]="loginForm.invalid || isLoading">
+        <span class="loading-spinner" *ngIf="isLoading"></span>
+        {{ isLoading ? 'Logging in...' : 'Log In' }}
       </button>
     </form>
 
