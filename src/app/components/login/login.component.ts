@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
     });
   }
 
@@ -32,9 +32,17 @@ export class LoginComponent implements OnInit {
     const savedEmail = localStorage.getItem('rememberedEmail');
     if (savedEmail) {
       this.loginForm.patchValue({
-        email: savedEmail
+        username: savedEmail
       });
     }
+  }
+
+  get username() {
+    return this.loginForm.get('username');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 
   onSubmit(): void {
@@ -42,18 +50,13 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this.error = null;
 
-      const { email, password } = this.loginForm.value;
-
-      this.authService.login({ username: email, password }).subscribe({
-        next: (response) => {
-          if (response.access_token) {
-            this.loading = false;
-            this.router.navigate(['/profile']);
-          }
+      this.authService.login(this.loginForm.value).subscribe({
+        next: () => {
+          this.router.navigate(['/profile']);
         },
-        error: (err) => {
+        error: (error) => {
+          this.error = error.error.message || 'Login failed';
           this.loading = false;
-          this.error = err.error.detail || 'An error occurred during login';
         }
       });
     } else {
