@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "serve -s dist/beyond-edge-lab/browser",  
+    "build": "ng build --configuration production",   
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng build --base-href=/beyond-edge-lab/ && npx gh-pages -d dist/beyond-edge-lab/browser"
@@ -22,7 +22,8 @@
     "rxjs": "~7.8.0",
     "three": "^0.173.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "serve": "^14.2.4" 
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.6",
