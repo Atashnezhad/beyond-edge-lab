@@ -2,12 +2,12 @@
   "name": "beyond-edge-lab",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "serve -s dist/beyond-edge-lab/browser",  
-    "build": "ng build --configuration production --base-href=/", 
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "ng build --base-href=/beyond-edge-lab/ && npx gh-pages -d dist/beyond-edge-lab/browser"
+  "ng": "ng",
+  "start": "serve -s dist/beyond-edge-lab",
+  "build": "ng build --configuration production --base-href=/",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "deploy": "ng build --base-href=/beyond-edge-lab/ && npx gh-pages -d dist/beyond-edge-lab"
   },
   "private": true,
   "dependencies": {
