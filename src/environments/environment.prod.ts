@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.beyondedgelab.com/api',
-  imageUploadUrl: 'https://api.beyondedgelab.com/api/upload',
+  apiUrl: 'https://beyond-edge-auth-service-production.up.railway.app/api',
+  imageUploadUrl: 'https://beyond-edge-auth-service-production.up.railway.app/api/upload',
   maxFileSize: 5242880, // 5MB in bytes
   allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif'],
   defaultLanguage: 'en',
@@ -11,4 +11,4 @@ export const environment = {
     analytics: true,
     experimentalFeatures: false
   }
-}; 
+};
