@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "postinstall": "ng build --configuration production",
-    "start": "serve -s dist/beyond-edge-lab/browser",  
+    "start": "serve -s dist/beyond-edge-lab",  
     "build": "ng build --configuration production --base-href=/", 
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
